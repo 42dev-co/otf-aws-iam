@@ -1,4 +1,4 @@
-# otf-iac-aws-iam
+# otf-aws-iam
 OpenTofu IAM Management
 
 
@@ -10,7 +10,7 @@ This repository contains Terraform configurations for managing IAM users, polici
 - [IAM Policies](#iam-policies)
 - [IAM Groups](#iam-groups)
 - [IAM Roles](#iam-roles)
-
+- [Manual Run](#manual-run)
 ## IAM Users
 
 ### YAML Structure
@@ -244,3 +244,46 @@ role1:
 | force_detach_policies       | Flag to force detach policies when deleting the role| false    | false   |
 | max_session_duration        | Maximum duration for the role session in seconds  | false    | 3600    |
 | tags                        | Key-value pairs for tagging the role              | false    | {}      |
+
+## Manual Run
+
+#### Pre-requsites
+
+1. You need to have Docker Installed
+2. You need to have go-task install, you may use [Devkit](https://github.com/42dev-co/devkit) to help you with that
+
+#### TL;DR
+
+1. To scaffold a new workspace
+```
+# task scaffold account=<Name of the AWS Account> account_id=<Your AWS Account ID>
+```
+
+2. To enter OpenTofu shell
+```
+# task shell account=<Name of the account you scaffold>
+```
+
+3. To unscaffold a workspace
+```
+# task unscaffold account=<Name of the account you scaffold>
+```
+
+### Other things to note
+
+In `setup.config` lies your opentofu version config and TIER settings.
+
+TIER settings are as of such
+
+1. Account specific services
+For instance Tier 1, you will create IAC service for IAM that are account specific.
+
+2. Account and Region specific services
+For Tier 2, you will create S3 service where it is regional specific.
+
+3. Account and Region with Group seggregrations.
+For Tier 3, you will create Squads . For instance, s3 services can be splitted by squad teams and each team manages their own folder.
+
+
+
+
