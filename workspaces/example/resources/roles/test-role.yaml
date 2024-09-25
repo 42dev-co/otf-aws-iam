@@ -1,0 +1,5 @@
+test-role:
+  create_role: true
+  description: "Test role"
+  policies:
+    - test

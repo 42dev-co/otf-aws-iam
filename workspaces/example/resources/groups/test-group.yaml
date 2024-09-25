@@ -1,0 +1,7 @@
+test-group:
+  create_group: true
+  description: "Test group"
+  policies:
+    - test
+  users:
+    - gavinyap

@@ -1,0 +1,3 @@
+user1:
+  create_user: true
+  email: user1@example.com
