@@ -2,7 +2,7 @@
 OpenTofu IAM Management
 
 
-This repository contains Terraform configurations for managing IAM users, policies, groups, and roles in AWS. Below are the definitions for each section, including the expected structure for YAML and JSON files.
+This repository contains OpenTofu configurations for managing IAM users, policies, groups, and roles in AWS. Below are the definitions for each section, including the expected structure for YAML and JSON files.
 
 ## Table of Contents
 
